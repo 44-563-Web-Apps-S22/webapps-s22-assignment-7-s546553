@@ -21,6 +21,15 @@
 <div class="alert alert-info" id="shakes">Number of shakes is zero</div>
 <div class="alert alert-info"  id="score">Location score is unknown</div>
 
+<div class="container-fluid ">
+  <div class="d-inline p-2 bg-primary text-black centre">Click on the squares to search for bird.</div>
+  <div class="d-inline p-2 bg-success text-white" id="shakes"> Number of shakes is zero.</div>
+  <div class="d-inline p-2 bg-warning text-white" id="score"> Location score is unknown.</div>
+  <button type="button" class="btn btn-primary"  onclick="reset()">New Game</button>
+</div>
+<br>
+
+
 <div class="container">
     <div class="row">
       <div class="col-sm img-thumbnail">
@@ -110,6 +119,7 @@
 
   </div>
     
+  
 
 <script>
 
@@ -168,7 +178,11 @@ function locationScore(pos1, pos2) {
                 return 0
         }
 
-
+        function reset(){
+            shakeCount = 0;
+            document.getElementById("shakes").innerHTML = "Number of shakes is " + shakeCount;
+            birdLocation = Math.floor(Math.random() * 25);
+          }
 
 </script>
 </body>
